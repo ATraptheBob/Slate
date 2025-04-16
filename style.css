@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Special+Gothic+Expanded+One&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+    background-color: black;
+}
+
+.cursorPointer{
+    content: "";
+    width: 3px;
+    height:3px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute
+     
+}
+
+.cursor {
+    width: 30px;
+    height:30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    opacity: 0.5;
+    mix-blend-mode: difference;
+}
+
+
+
+@keyframes cursorAnim {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+
+}@keyframes cursorPointerAnim {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(10);
+    }
+    100%{
+        transform: scale(1);
+        opacity:0;
+    }
+}
+
+.expand{
+    animation: cursorAnim 0.5s forwards;
+    
+}
+
+.expandPointer{
+    animation: cursorPointerAnim 0.5s forwards;
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    transition: all 0.3s ease-in-out;
+}
+
+.header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: red;
+}
+
+.nav {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav, .nav_item{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_logo{
+    font-size: 25px;
+}
+
+.nav_item{
+    column-gap: 25px;
+}
+
+.nav_link:hover{
+    color: grey;
+}
+
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color:black;
+}
+
+.nav_item a::after{
+    content: '';
+    display: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease-in-out;
+}
+
+.text{
+    top: 100px;
+    position: relative;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+.btn-login {
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .btn-login span {
+    transition: all 0.3s;
+  }
+  .btn-login::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    x: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+  }
+  .btn-login:hover span {
+    letter-spacing: 2px;
+  }
+  .btn-login:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+  }
+  .btn-login::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    x: 1;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.1);
+  }
+  .btn-login:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+  }
+  
