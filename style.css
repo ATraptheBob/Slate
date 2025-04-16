@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     cursor: none;
-    background-color: black;
+    
 }
 
 .cursorPointer{
@@ -13,8 +13,8 @@
     height:3px;
     border: 1px solid white;
     border-radius: 50%;
-    position: absolute
-     
+    position: absolute;
+    pointer-events: none;
 }
 
 .cursor {
@@ -27,6 +27,7 @@
     transition-timing-function: ease-out;
     opacity: 0.5;
     mix-blend-mode: difference;
+    pointer-events: none;
 }
 
 
@@ -81,7 +82,7 @@ a{
     height: 80px;
     width: 100%;
     padding: 0 20px;
-    background-color: red;
+    background-color: black;
 }
 
 .nav {
@@ -125,20 +126,24 @@ a{
     transition: all 0.3s ease-in-out;
 }
 
-.text{
+.text_body{
     top: 100px;
     position: relative;
-    margin: 10px;
     text-decoration: none;
     color: white;
-    background-color: red;
+    background-color: black;
     font-family: "Fira Code", monospace;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
 }
 
-
+.nav_logo_img{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    position: relative;
+}
 
 
 
