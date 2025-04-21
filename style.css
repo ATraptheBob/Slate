@@ -8,29 +8,33 @@
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    
+    color: white;
 }
 
 .cursorPointer{
     content: "";
     width: 3px;
     height:3px;
-    border: 1px solid white;
+    border: 2px solid;
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
+    z-index: 110;
 }
 
 .cursor {
     width: 30px;
     height:30px;
-    border: 1px solid white;
+    border: 2px solid;
     border-radius: 50%;
     position: absolute;
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     opacity: 0.5;
-    mix-blend-mode: difference;
     pointer-events: none;
+    background: none;
+    z-index: 110;
 }
 
 .nav_logo_container{
@@ -78,21 +82,20 @@
 
 a{
     text-decoration: none;
-    color: white;
-    
     transition: all 0.3s ease-in-out;
 }
 
 .header {
     position: fixed;
-    height: 80px;
+    height: 6vh;
+    min-height: 40px;
     width: 100%;
     padding: 0 20px;
     background-color: black;
+    z-index:100;
 }
 
 .nav {
-    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
 }
@@ -125,10 +128,19 @@ a{
 
 .nav_item a::after{
     content: '';
-    display: absolute;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
     width: 100%;
     height: 2px;
-    background: rgb(255, 255, 255);
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.nav_item a:hover::after{
+    transform: scaleX(1);
     transition: all 0.3s ease-in-out;
 }
 
@@ -142,13 +154,87 @@ a{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.ourTeam{
+    position: relative;
+    width: 100%;
+    color: black;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background: black;
 }
 
 .nav_logo_img{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 35px;
     background-color: black;
     position: relative;
+    
+}
+
+.text_body a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.text_body a:hover::after{
+    transform: scaleX(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.breaker{
+    padding: 20px 0;
+    color:white;
+}
+
+.main_body{
+    position: relative;
+    top: 6vh;
+    grid-template-columns: 70vw 30vw;
+    display: grid;
+    height: 94vh;
+    width: auto;
+    background-color: black;
+}
+.mainCell{
+    background-color: red;
+}
+
+.side_container{
+    background-color: black;
+    grid-template-rows: 47vh 47vh;
+    display: grid;
+}
+
+.clock{
+    background-color: green;
+}
+
+.music{
+    background-color: blue;
+}
+
+.calendar{
+    position: relative;
+}
+
+.spotify{
+    position: relative;
+    float: right;
+    float: bottom;
+    width: auto;
 }
 
 
@@ -157,8 +243,7 @@ a{
 
 
 .btn-login {
-    color: #FFF;
-    background-color: black;
+    color: white;
     transition: all 0.3s;
     position: relative;
   }
@@ -176,8 +261,7 @@ a{
     opacity: 0;
     transition: all 0.3s;
     border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-top-style: solid;
+    border-bottom-width: 2px;
     border-bottom-style: solid;
     transform: scale(0.1, 1);
   }
@@ -188,6 +272,7 @@ a{
     opacity: 1; 
     transform: scale(1, 1); 
   }
+  
   .btn-login::after {
     content: '';
     position: absolute;
@@ -205,10 +290,12 @@ a{
 
   .loginButton{
     background: none;
-    border: none;
     color: white;
+    border: none;
     margin: 0;
     padding: 0;
     font-size: large;
+    width: 80px;
+    height: 32.67px;
   }
   
